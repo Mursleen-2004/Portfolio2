@@ -13,7 +13,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-white">Musa Bukhari</h3>
+          <h3 className="text-2xl font-bold text-white">Mursleen Bukhari</h3>
           <p className="text-sm mt-1 text-gray-400">Web Developer & AI Enthusiast</p>
         </motion.div>
 
@@ -53,9 +53,9 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {[
-            { href: "https://github.com/yourusername", icon: <FaGithub /> },
-            { href: "https://linkedin.com/in/yourusername", icon: <FaLinkedin /> },
-            { href: "mailto:your@email.com", icon: <FaEnvelope /> },
+            { href: "https://github.com/Mursleen-2004", icon: <FaGithub /> },
+            { href: "https://www.linkedin.com/in/mursleen-bukhari-322a86259/", icon: <FaLinkedin /> },
+            { href: "musabukhari20@gmail.com", icon: <FaEnvelope /> },
           ].map((item, i) => (
             <motion.a
               key={i}
@@ -77,7 +77,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <p className="text-center text-xs text-white tracking-wide">
-        © {new Date().getFullYear()} Musa Bukhari. All rights reserved.
+        © {new Date().getFullYear()} Portfolio. All rights reserved.
       </p>
     </footer>
   );
