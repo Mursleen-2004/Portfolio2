@@ -50,6 +50,15 @@ const projects = [
     preview: "https://hotel-booking-app-lyart-beta.vercel.app/",
     code: "https://github.com/Mursleen-2004/Hotel-Booking-App",
   },
+  {
+    name: "PromptIQ - AI Powered Quiz Generator",
+    image: "/assets/projects/PromptIQ.png",
+    description:
+      "PromptIQ is an AI-powered quiz generator that creates customized, engaging quizzes in seconds.",
+    tech: ["React", "Tailwind", "OpenAi", "JWT", "MongoDB"],
+    preview: "https://prompt-iq-ai-powered-quiz-generator-six.vercel.app/",
+    code: "https://github.com/Mursleen-2004/PromptIQ---AI-Powered-Quiz-Generator",
+  },
 ];
 
 const Projects = () => {
