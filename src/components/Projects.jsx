@@ -78,11 +78,11 @@ const Projects = () => {
         pagination={{ clickable: true }}
         spaceBetween={30}
         slidesPerView={1}
-        className="w-full max-w-6xl"
+        className="w-full max-w-6xl "
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[#1f2833] rounded-2xl shadow-lg p-6 md:p-10">
+            <div className="bg-gradient-to-br from-[#09303d] to-[#537895]  rounded-2xl shadow-2xl p-6 md:p-10">
               <div className="flex flex-col lg:flex-row gap-8 items-center">
                 <img
                   src={project.image}

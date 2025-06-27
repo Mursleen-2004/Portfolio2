@@ -6,6 +6,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Certificates from '../components/Certificates';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Education/>
       <Skills/>
       <Projects/>
+      <Certificates/>
       <Footer/>
     </div>
   );
