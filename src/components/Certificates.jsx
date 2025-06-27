@@ -72,7 +72,7 @@ const Certificates = () => {
     <section className="py-20 px-6 bg-transparent text-[#c5c6c7]" id="certificates">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-14 text-white tracking-wide uppercase">
-          My Certificates
+           Certificates
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center mb-8">

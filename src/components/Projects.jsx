@@ -69,7 +69,7 @@ const Projects = () => {
       className="min-h-screen  text-white px-4 md:px-10 py-20 flex flex-col items-center"
     >
       <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-white">
-        My Projects
+         Projects
       </h2>
 
       <Swiper
