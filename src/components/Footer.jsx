@@ -1,86 +1,52 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
-const Footer = () => {
+const socials = [
+  { href:"https://github.com/Mursleen-2004",                         icon:<FaGithub size={18}/> },
+  { href:"https://www.linkedin.com/in/mursleen-bukhari-322a86259/",  icon:<FaLinkedin size={18}/> },
+  { href:"mailto:musabukhari20@gmail.com",                           icon:<FaEnvelope size={18}/> },
+];
+
+export default function Footer() {
+  const { isDark } = useTheme();
+  const border = isDark ? "border-white/[0.07]" : "border-slate-200";
+  const tx2    = isDark ? "text-slate-400" : "text-slate-500";
+
   return (
-    <footer className="text-[#c5c6c7] px-6 pt-14 pb-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        
-        {/* Branding */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-white">Mursleen Bukhari</h3>
-          <p className="text-sm mt-1 text-gray-400">Web Developer & AI Enthusiast</p>
+    <footer className={`px-6 pt-12 pb-6 border-t ${border}`}>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
+          <h3 className="text-xl font-extrabold gradient-text">Mursleen Bukhari</h3>
+          <p className={`text-sm mt-1 ${tx2}`}>MERN Stack Developer &amp; AI Enthusiast</p>
         </motion.div>
 
-        {/* Navigation Links */}
-        <motion.ul
-          className="flex gap-6 text-sm font-medium"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {["Home", "Projects", "Contact"].map((link, i) => {
-            const isContact = link === "Contact";
-            const href = isContact ? "/contact" : `#${link.toLowerCase()}`;
-
-            return (
-              <motion.li
-                key={i}
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <a
-                  href={href}
-                  className="hover:text-[#FCDE59] transition duration-300"
-                >
-                  {link}
-                </a>
-              </motion.li>
-            );
-          })}
+        <motion.ul className="flex gap-6 text-sm" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.5, delay:0.1 }}>
+          {["Home","Projects","Contact"].map((link,i) => (
+            <li key={i}>
+              <a href={link==="Contact"?"/contact":link==="Home"?"/":`#${link.toLowerCase()}`}
+                className={`hover:text-violet-500 transition-colors ${tx2}`}>{link}</a>
+            </li>
+          ))}
         </motion.ul>
 
-        {/* Social Icons */}
-        <motion.div
-          className="flex gap-5"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          {[
-            { href: "https://github.com/Mursleen-2004", icon: <FaGithub /> },
-            { href: "https://www.linkedin.com/in/mursleen-bukhari-322a86259/", icon: <FaLinkedin /> },
-            { href: "musabukhari20@gmail.com", icon: <FaEnvelope /> },
-          ].map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="text-xl hover:text-[#FCDE59] transition duration-300"
-            >
-              {item.icon}
-            </motion.a>
+        <motion.div className="flex gap-3" initial={{ opacity:0 }} whileInView={{ opacity:1 }} transition={{ duration:0.5, delay:0.15 }}>
+          {socials.map((s,i) => (
+            <a key={i} href={s.href} target="_blank" rel="noreferrer"
+              className={`p-2.5 rounded-xl transition-all duration-300 hover:scale-110 ${
+                isDark ? "bg-white/5 hover:bg-violet-500/15 text-slate-400 hover:text-violet-400"
+                       : "bg-slate-100 hover:bg-violet-50 text-slate-500 hover:text-violet-600"
+              }`}>
+              {s.icon}
+            </a>
           ))}
         </motion.div>
       </div>
-
-      {/* Horizontal Line */}
-      <hr className="my-6 border-t   border-[#ffffff7c]" />
-
-      {/* Bottom Copyright */}
-      <p className="text-center text-xs text-white tracking-wide">
-        © {new Date().getFullYear()} Portfolio. All rights reserved.
+      <hr className={`my-6 ${border}`} />
+      <p className={`text-center text-xs ${tx2}`}>
+        © {new Date().getFullYear()} Mursleen Bukhari. All rights reserved.
       </p>
     </footer>
   );
-};
-
-export default Footer;
+}

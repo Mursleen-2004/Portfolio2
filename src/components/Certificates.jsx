@@ -69,13 +69,13 @@ const Certificates = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-transparent text-[#c5c6c7]" id="certificates">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-transparent text-slate-400" id="certificates">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-14 text-white tracking-wide uppercase">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-white tracking-wide uppercase">
            Certificates
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center mb-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 place-items-center mb-6 sm:mb-8">
           <AnimatePresence mode="wait">
             {paginatedCerts.map((cert, index) => (
               <motion.div
@@ -92,7 +92,7 @@ const Certificates = () => {
                   className="rounded-xl w-full max-w-xs shadow-xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-80  hover:scale-110 transition-all duration-400 cursor-pointer rounded-xl flex flex-col justify-center items-center text-center px-4">
-                  <h3 className="text-lg font-bold text-[#66fcf1] mb-1">{cert.title}</h3>
+                  <h3 className="text-lg font-bold text-[#22D3EE] mb-1">{cert.title}</h3>
                   <p className="text-sm text-gray-300 mb-1">{cert.issuer}</p>
                   <p className="text-xs text-gray-400 mb-4">{cert.date}</p>
                   <div className="flex gap-4">
@@ -100,7 +100,7 @@ const Certificates = () => {
                       href={cert.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-[#66fcf1] text-black px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[#45a29e] flex items-center gap-2 transition"
+                      className="bg-[#22D3EE] text-black px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[#7C3AED] flex items-center gap-2 transition"
                     >
                       <FaEye className="text-xs" />
                       View
@@ -108,7 +108,7 @@ const Certificates = () => {
                     <a
                       href={cert.pdf}
                       download
-                      className="border border-[#66fcf1] text-[#66fcf1] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[#66fcf1] hover:text-black flex items-center gap-2 transition"
+                      className="border border-[#22D3EE] text-[#22D3EE] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[#22D3EE] hover:text-black flex items-center gap-2 transition"
                     >
                       <FaDownload className="text-xs" />
                       Download
@@ -127,7 +127,7 @@ const Certificates = () => {
             className={`px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 transition ${
               currentPage === 0
                 ? "bg-gray-700 cursor-not-allowed text-gray-400"
-                : "bg-[#66fcf1] text-black hover:bg-[#45a29e] cursor-pointer"
+                : "bg-[#22D3EE] text-black hover:bg-[#7C3AED] cursor-pointer"
             }`}
           >
            
@@ -141,7 +141,7 @@ const Certificates = () => {
             className={`px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 transition ${
               (currentPage + 1) * pageSize >= certificates.length
                 ? "bg-gray-700 cursor-not-allowed text-gray-400"
-                : "bg-[#66fcf1] text-black hover:bg-[#45a29e] cursor-pointer"
+                : "bg-[#22D3EE] text-black hover:bg-[#7C3AED] cursor-pointer"
             }`}
           >
             Next

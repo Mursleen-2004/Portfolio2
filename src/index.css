@@ -1,31 +1,117 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
+/* ── Brand tokens (same in both themes) ───────────────────── */
+:root {
+  --violet:        #8B5CF6;
+  --violet-dark:   #7C3AED;
+  --violet-dim:    rgba(139, 92, 246, 0.15);
+  --violet-glow:   rgba(139, 92, 246, 0.35);
+  --sky:           #22D3EE;
+  --sky-dim:       rgba(34, 211, 238, 0.12);
+  --amber:         #F59E0B;
+  --amber-dim:     rgba(245, 158, 11, 0.12);
+  --emerald:       #34D399;
+}
+
+/* ── Dark theme (default) ─────────────────────────────────── */
+html, html.dark {
+  --bg-0:          #020817;
+  --bg-1:          #0F172A;
+  --bg-2:          #1E293B;
+  --card:          rgba(15, 23, 42, 0.7);
+  --card-hover:    rgba(30, 41, 59, 0.8);
+  --border:        rgba(148, 163, 184, 0.1);
+  --border-accent: rgba(139, 92, 246, 0.35);
+  --tx-1:          #F8FAFC;
+  --tx-2:          #CBD5E1;
+  --tx-3:          #64748B;
+  --nav-bg:        rgba(2, 8, 23, 0.85);
+  --input-bg:      rgba(15, 23, 42, 0.8);
+}
+
+/* ── Light theme ──────────────────────────────────────────── */
+html.light {
+  --bg-0:          #FFFFFF;
+  --bg-1:          #F8FAFC;
+  --bg-2:          #F1F5F9;
+  --card:          rgba(255, 255, 255, 0.92);
+  --card-hover:    rgba(255, 255, 255, 1);
+  --border:        #E2E8F0;
+  --border-accent: rgba(124, 58, 237, 0.25);
+  --tx-1:          #0F172A;
+  --tx-2:          #475569;
+  --tx-3:          #94A3B8;
+  --nav-bg:        rgba(255, 255, 255, 0.88);
+  --input-bg:      rgba(248, 250, 252, 0.9);
+  --violet:        #7C3AED;
+  --violet-dim:    rgba(124, 58, 237, 0.08);
+  --sky:           #0891B2;
+  --sky-dim:       rgba(8, 145, 178, 0.08);
+  --amber:         #D97706;
+  --amber-dim:     rgba(217, 119, 6, 0.08);
+  --emerald:       #059669;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
 * {
-  font-family: Inter;
+  font-family: Inter, system-ui, sans-serif;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
+html { scroll-behavior: smooth; }
+body { background-color: var(--bg-0); color: var(--tx-1); }
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 4px; }
+
+/* ── Glassmorphism utilities ──────────────────────────────── */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+.glass-accent {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-accent);
+}
+
+/* ── Gradient text ────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--violet) 0%, var(--sky) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
 @keyframes float {
-  0% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotateY(5deg);
-  }
-  100% {
-    transform: translateY(0px) rotateY(0deg);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
 }
+.animate-float { animation: float 4s ease-in-out infinite; }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
 }
+.pulse-ring { animation: pulse-ring 2s ease-out infinite; }
 
-.perspective-3d {
-  perspective: 1000px;
-}
+/* ── Text clamp ───────────────────────────────────────────── */
+.line-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.line-clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
 
-html{
-  scroll-behavior: smooth;
+/* ── Section heading ──────────────────────────────────────── */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--tx-1);
+  letter-spacing: -0.02em;
 }
