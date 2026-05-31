@@ -13,7 +13,7 @@ import {
   FaSpinner,
 } from "react-icons/fa";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 const EMAIL = "developers@bamrec.com";
 const LINKEDIN_URL = "https://www.linkedin.com/in/mursleen-bukhari-322a86259/";
 const GITHUB_URL = "https://github.com/Mursleen-2004";

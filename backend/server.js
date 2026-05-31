@@ -87,13 +87,17 @@ app.use((err, _req, res, _next) => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Start Server
+// Start Server (only when run directly, not imported by Vercel serverless)
 // ─────────────────────────────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`Portfolio Backend running on port ${PORT}`);
-  console.log(`  Health: http://localhost:${PORT}/api/health`);
-  console.log(`  AI:     http://localhost:${PORT}/api/ai/chat`);
-  console.log(`  Mail:   http://localhost:${PORT}/api/contact/send`);
-});
+import { fileURLToPath } from "url";
+const isMain = process.argv[1] === fileURLToPath(import.meta.url);
+if (isMain) {
+  app.listen(PORT, () => {
+    console.log(`Portfolio Backend running on port ${PORT}`);
+    console.log(`  Health: http://localhost:${PORT}/api/health`);
+    console.log(`  AI:     http://localhost:${PORT}/api/ai/chat`);
+    console.log(`  Mail:   http://localhost:${PORT}/api/contact/send`);
+  });
+}
 
 export default app;
