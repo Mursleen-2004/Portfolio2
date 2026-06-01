@@ -242,7 +242,7 @@ const Timeline = () => {
           className="flex justify-center mt-4"
         >
           <div className="px-6 py-2 rounded-full bg-gradient-to-r from-[#F59E0B]/20 to-[#22D3EE]/20 border border-white/20 text-sm font-medium text-white/70">
-            The journey continues... 🚀
+            The journey continues...
           </div>
         </motion.div>
       </div>

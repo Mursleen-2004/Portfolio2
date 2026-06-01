@@ -114,7 +114,7 @@ const Navbar = () => {
         href="/"
         className="text-2xl font-extrabold tracking-wide hover:scale-105 transition-transform duration-300 select-none gradient-text"
       >
-        MB
+        Mursleen
       </a>
 
       {/* Desktop Nav */}

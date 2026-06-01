@@ -12,7 +12,7 @@ const educationData = [
     accent: "#8B5CF6",
   },
   {
-    title: "Intermediate (FSc)",
+    title: "Intermediate (ICS)",
     institute: "FG Degree College For Boys, Multan Cantt",
     year: "2019 – 2021",
     detail: "Studied ICS. Developed strong foundational knowledge in Mathematics, Statistics, and Computer fundamentals.",

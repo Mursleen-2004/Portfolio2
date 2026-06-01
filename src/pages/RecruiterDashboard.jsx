@@ -20,7 +20,7 @@ import {
 import Navbar from "../components/Navbar";
 import { useTheme } from "../context/ThemeContext";
 import { projects } from "../data/projects";
-import heroImage from "../assets/musa.jpg";
+import heroImage from "../assets/Mussa.jpg";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Animation Variants
@@ -212,7 +212,7 @@ const RecruiterDashboard = () => {
               </motion.div>
 
               {/* Availability badge */}
-              <motion.div variants={fadeUp} custom={2}>
+              {/* <motion.div variants={fadeUp} custom={2}>
                 <span
                   className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold border ${
                     availabilityBadgeColor[selectedOption.color]
@@ -221,7 +221,7 @@ const RecruiterDashboard = () => {
                   <span className="w-2.5 h-2.5 rounded-full bg-current animate-pulse" />
                   {selectedOption.label}
                 </span>
-              </motion.div>
+              </motion.div> */}
 
               {/* Availability Selector */}
               <motion.div

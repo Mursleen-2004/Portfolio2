@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 const API_URL = import.meta.env.VITE_API_URL ?? "";
-const EMAIL = "developers@bamrec.com";
+const EMAIL = "musabukhari20@gmail.com";
 const LINKEDIN_URL = "https://www.linkedin.com/in/mursleen-bukhari-322a86259/";
 const GITHUB_URL = "https://github.com/Mursleen-2004";
 
@@ -188,7 +188,7 @@ const Contact = () => {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Mursleen.."
                   className={`w-full rounded-xl px-4 py-3 text-sm border outline-none transition-all duration-200 ${inputBg}`}
                 />
                 {errors.name && <p className={errorColor}>{errors.name}</p>}
@@ -204,7 +204,7 @@ const Contact = () => {
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="mursleen@example.com"
                   className={`w-full rounded-xl px-4 py-3 text-sm border outline-none transition-all duration-200 ${inputBg}`}
                 />
                 {errors.email && <p className={errorColor}>{errors.email}</p>}
