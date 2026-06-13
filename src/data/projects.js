@@ -1,6 +1,37 @@
-export const categories = ["All", "Frontend", "MERN", "AI", "Full Stack"];
+export const categories = ["All", "Frontend", "MERN", "AI", "Full Stack", "Automation"];
 
 export const projects = [
+  {
+    id: "upwork-ai-scout",
+    name: "Upwork AI Job Scout",
+    category: "Automation",
+    image: "/assets/projects/upwork_ai_scout.png",
+    description: "A full-stack automation tool that monitors job boards every 5 minutes, scores each job against a developer profile using Gemini Flash AI, and sends email alerts for high-match opportunities.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Gemini Flash AI", "Nodemailer", "Tailwind CSS", "node-cron"],
+    preview: "https://github.com/Mursleen-2004/upwork-ai-scout",
+    code: "https://github.com/Mursleen-2004/upwork-ai-scout",
+    featured: true,
+    overview: "Upwork AI Job Scout is a personal automation system that eliminates the manual effort of browsing job listings. It runs 24/7, fetches new jobs every 5 minutes, uses Gemini Flash AI to score each job against the developer's profile, and emails detailed alerts only for strong matches.",
+    problem: "Freelancers waste hours daily scanning job boards for relevant work. By the time they find a good match, top applicants have already applied. Manual monitoring is slow, inconsistent, and exhausting.",
+    solution: "Built a Node.js backend with node-cron that continuously scans job sources. Each job is analyzed by Google Gemini Flash AI — which returns a match score, strengths, weaknesses, and relevant projects to mention. Only jobs scoring ≥75% trigger a styled email alert. Scores ≥90% fire a second urgent 'High Alert' email. A React dashboard provides full visibility into all scanned jobs and AI analysis.",
+    features: [
+      "Automated job scanning every 5 minutes via node-cron",
+      "Gemini Flash AI scores each job 0–100% against developer profile",
+      "Dual email alerts — standard (≥75%) and urgent high-alert (≥90%)",
+      "React dashboard with job table, filters, and AI analysis modal",
+      "MongoDB deduplication — never processes the same job twice",
+      "Manual scan trigger and scheduler status from dashboard",
+      "Configurable match threshold and notification settings",
+      "Deployment-ready for Render (backend) + Vercel (frontend)"
+    ],
+    challenges: [
+      "Upwork deprecated all public RSS feeds and OAuth 1.0a endpoints in 2024, requiring a full pivot to their OAuth 2.0 + GraphQL API",
+      "Designing the Gemini prompt to return reliable structured JSON with consistent scoring logic",
+      "Rate-limiting Gemini API calls (15 RPM free tier) without blocking the scheduler pipeline"
+    ],
+    results: "A fully functional personal automation tool that saves hours of daily job hunting. Demonstrates end-to-end full-stack development, AI API integration, scheduled background jobs, and automated email workflows.",
+    architecture: "node-cron (5min) → Job Collector → MongoDB (dedupe) → Gemini Flash AI (scoring) → Email Service (Nodemailer) → REST API → React Dashboard"
+  },
   {
     id: "real-estate",
     name: "Real Estate Website",
