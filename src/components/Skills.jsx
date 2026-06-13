@@ -249,9 +249,8 @@ const SkillCard = ({ skill, isDark }) => {
             className="h-full rounded-full"
             style={{ backgroundColor: barColor }}
             initial={{ width: 0 }}
-            whileInView={{ width: `${skill.percent}%` }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            animate={{ width: `${skill.percent}%` }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           />
         </div>
       </div>
