@@ -63,12 +63,13 @@ export default function Hero() {
 
         <motion.div variants={item}
           className={`text-xl sm:text-2xl font-bold min-h-[2rem] ${isDark ? "text-[#A78BFA]" : "text-violet-600"}`}>
-          <Typewriter options={{ strings: ["Frontend Developer", "MERN Stack Developer", "AI Enthusiast", "Tech Explorer"], autoStart: true, loop: true }} />
+          <Typewriter options={{ strings: ["Full-Stack Web Developer", "Angular & React Developer", "MERN Stack Developer", "Available for Client Projects"], autoStart: true, loop: true }} />
         </motion.div>
 
         <motion.p variants={item} className={`max-w-lg mx-auto md:mx-0 text-base leading-relaxed ${bio}`}>
-          A curious developer who turns ideas into meaningful web experiences. I build full-stack apps
-          with MERN, integrate AI, and push the boundaries of what&apos;s possible on the web.
+          I help businesses and startups turn ideas into fast, production-ready web applications.
+          From clean React &amp; Angular frontends to scalable Node.js &amp; PostgreSQL backends — I deliver
+          complete solutions that work for your users and grow with your business.
         </motion.p>
 
         <motion.div variants={item} className="flex justify-center md:justify-start">

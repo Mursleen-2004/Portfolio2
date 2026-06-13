@@ -302,8 +302,7 @@ const Skills = () => {
               isDark ? "text-gray-400" : "text-gray-500"
             }`}
           >
-            A snapshot of my technical stack — from building UIs to training
-            models.
+            Technologies I use to deliver complete, production-ready solutions — from responsive frontends to robust backends and databases.
           </p>
         </motion.div>
 
